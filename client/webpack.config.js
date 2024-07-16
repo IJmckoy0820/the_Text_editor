@@ -19,25 +19,25 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './src/index.html',
-        title: 'Budget Tracker'
+        template: './index.html',
+        title: 'Jate Text Editor',
       }),
 
       new InjectManifest({
-        swSrc: './src/sw.js',
+        swSrc: '/src-sw.js',
         swDest: 'sw.js'
       }),
       new WebpackPwaManifest({
-        name: 'Budget Tracker',
-        short_name: 'Budget Tracker',
-        description: 'An application that allows you to track your budget.',
+        name: 'Jate Text Editor',
+        short_name: 'Text Editor',
+        description: 'An application that allows you to write and save text',
         background_color: '#01579b',
         theme_color: '#ffffff',
         start_url: './',
         publicPath: './',
         icons: [
           {
-            src: path.resolve('src/icons/icon-192x192.png'),
+            src: path.resolve('./src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join('assets', 'icons'),
           },
